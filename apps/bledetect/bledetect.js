@@ -38,14 +38,14 @@ function scan() {
 
   NRF.findDevices(devices => {
     devices.forEach(device =>{
-      let txPower = -69;
-      let distance = Math.pow(10d, ((double) txPower - device.rssi) / (10 * 2));
+     
+     
       let deviceName = device.id.substring(0,17); 
 
       if (device.name) {
         deviceName = device.name;
       }
-      let deviceName = distance; 
+      
 
       menu[deviceName] = () => showDeviceInfo(device);
     });
