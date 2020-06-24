@@ -38,7 +38,9 @@ function scan() {
 
   NRF.findDevices(devices => {
     devices.forEach(device =>{
-      let deviceName = device.id.substring(0,15);
+      let txPower = -69;
+      let distance = Math.pow(10d, ((double) txPower - device.rssi) / (10 * 2));
+      let deviceName = distance; 
 
       if (device.name) {
         deviceName = device.name;
@@ -54,6 +56,8 @@ function waitMessage() {
   E.showMenu();
   E.showMessage("scanning");
 }
+
+
 
 scan();
 waitMessage();
