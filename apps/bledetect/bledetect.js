@@ -38,7 +38,7 @@ function scan() {
 
   NRF.findDevices(devices => {
     devices.forEach(device =>{
-      let deviceName = device.id.substring(0,17) + "-TEST";
+      let deviceName = device.id.substring(0,15);
 
       if (device.name) {
         deviceName = device.name;
